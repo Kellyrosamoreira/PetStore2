@@ -1,6 +1,6 @@
-// 1- Pacote
-package petstore;
 
+// 1 - Pacote
+package petstore;
 
 // 2 - Bibliotecas
 
@@ -11,38 +11,42 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.CoreMatchers.is;
 
-//3- Classe
+// 3 - Classe
 public class Pet {
-    //3.1 - Atributos
+    // 3.1 - Atributos
+    String uri = "https://petstore.swagger.io/v2/pet"; // endereço da entidade Pet
 
-    String uri = "https://petstore.swagger.io/v2/pet"; //Endereco da entidade Pet
-
-    // 3.2 - Metodos e Funções
-
+    // 3.2 - Métodos e Funções
     public String lerJson(String caminhoJson) throws IOException {
-
         return new String(Files.readAllBytes(Paths.get(caminhoJson)));
     }
 
-    //Incluir - Create - Post
-
-    @Test // identifica o método ou função como um teste para o TestNG
+    // Incluir - Create - Post
+    @Test  // Identifica o método ou função como um teste para o TestNG
     public void incluirPet() throws IOException {
         String jsonBody = lerJson("db/pet1.json");
 
-        // sintaxe
+        // Sintaxe Gherkin
+        // Dado - Quando - Então
+        // Given - When - Then
 
-        given()
-                .contentType("application/json") //Comum API REST
+        given() // Dado
+                .contentType("application/json") // comum em API REST - antigas era "text/xml"
                 .log().all()
                 .body(jsonBody)
-        .when()
+                .when()  // Quando
                 .post(uri)
-        .then()
+                .then()  // Então
                 .log().all()
                 .statusCode(200)
+                .body("name", is("Mozart"))
+                .body("status", is("available"))
         ;
 
+
     }
+
+
 }
