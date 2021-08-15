@@ -1,5 +1,5 @@
-Request method:	POST
-.Request URI:	https://serverest.dev/usuarios/
+Request method:	PUT
+>Request URI:	https://serverest.dev/usuarios/0uxuPY0cbmQhpEz1
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
@@ -11,13 +11,13 @@
 Multiparts:		<none>
 Body:
 {
-    "nome": "Kelly Gutlich",
-"    "email": "teste@kelly11.com",
-    "password": "teste123",
+    "nome": "Fulano da Silva",
+#    "email": "beltrano@qa.com.br",
+    "password": "teste",
     "administrador": "true"
 }
 HTTP/1.1 400 Bad Request
-%Date: Sun, 15 Aug 2021 19:54:37 GMT
+%Date: Sun, 15 Aug 2021 20:18:37 GMT
 /Content-Type: application/json; charset=utf-8
 Content-Length: 53
 Connection: keep-alive
@@ -28,8 +28,43 @@
 x-download-options: noopen
 !x-content-type-options: nosniff
 !x-xss-protection: 1; mode=block
-?x-moesif-transaction-id: 471522da-2f27-4420-b8eb-c37ca9cf46b3
+?x-moesif-transaction-id: 10694584-2e9b-4b6b-80a9-46ff8ed1bdef
 
 {
 2    "message": "Este email já está sendo usado"
 }
+Request method:	POST
+.Request URI:	https://serverest.dev/usuarios/
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+2				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "nome": "Kelly Gutlich",
+"    "email": "teste@kelly11.com",
+    "password": "teste123",
+    "administrador": "true"
+}
+HTTP/1.1 400 Bad Request
+%Date: Sun, 15 Aug 2021 20:18:37 GMT
+/Content-Type: application/json; charset=utf-8
+Content-Length: 53
+Connection: keep-alive
+ Access-Control-Allow-Origin: *
+x-dns-prefetch-control: off
+x-frame-options: SAMEORIGIN
+@strict-transport-security: max-age=15552000; includeSubDomains
+x-download-options: noopen
+!x-content-type-options: nosniff
+!x-xss-protection: 1; mode=block
+?x-moesif-transaction-id: 709a8638-9d21-464a-a6c5-3dd128947a20
+
+{
+2    "message": "Este email já está sendo usado"
+}

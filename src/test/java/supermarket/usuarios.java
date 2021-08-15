@@ -17,6 +17,7 @@ import static org.hamcrest.Matchers.contains;
 // 3 - Classes
 public class usuarios {
     String uri = "https://serverest.dev/usuarios/";
+    String uri2 = "https://serverest.dev/usuarios/0uxuPY0cbmQhpEz1";
 
     public String lerJson(String caminhoJson) throws IOException {
         return new String(Files.readAllBytes(Paths.get(caminhoJson)));
@@ -44,9 +45,26 @@ public class usuarios {
                 //.body("email", is("teste@kelly.com"))
                 //.body("email", is("teste@kelly.com"))
                 //.body("password", is("teste12"))
-
         ;
 
     }
+    @Test(priority = 2)
+    public void edituser() throws IOException {
+        String jsonBody = lerJson("db/supermarketalter.json");
+
+        given() // Dado
+                .contentType("application/json") // comum em API REST - antigas era "text/xml"
+                .log().all()
+                .body(jsonBody)
+                .when()  // Quando
+                .put(uri2)
+                .then()  // Então
+                .log().all()
+                //.statusCode(201)
+                .statusCode(400)
+        ;
+    }
+
+
 }
 
