@@ -40,7 +40,8 @@ public class User {
             .log().all()
             .statusCode(200)
             .body("username", is("TesteKelly"))
-            .body("password", is("1234"))
+            //.body("username", is("TesteKelly"))
+            //.body("password", is("1234"))
             //.body("email", is("kelly@teste.com.br"))
            // .body("lastName", is("Gutlich"))
 

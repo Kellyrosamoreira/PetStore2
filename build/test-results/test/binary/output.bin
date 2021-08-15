@@ -1,5 +1,5 @@
 Request method:	POST
-ARequest URI:	https://petstore.swagger.io/v2/user/createWithList
+.Request URI:	https://serverest.dev/usuarios/
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
@@ -10,30 +10,26 @@
 Cookies:		<none>
 Multiparts:		<none>
 Body:
-[
-    {
-        "id": 39,
-"        "username": "TesteKelly",
-        "firstName": "Teste",
-        "lastName": "kelly",
-'        "email": "kelly@teste.com.br",
-        "password": "1234",
-$        "phone": "(12)98299-9999)",
-        "userStatus": 0
-    }
-]
-HTTP/1.1 200 OK
-%Date: Sun, 15 Aug 2021 16:40:35 GMT
- Content-Type: application/json
-Transfer-Encoding: chunked
+{
+    "nome": "Kelly Gutlich",
+"    "email": "teste@kelly11.com",
+    "password": "teste123",
+    "administrador": "true"
+}
+HTTP/1.1 400 Bad Request
+%Date: Sun, 15 Aug 2021 19:54:37 GMT
+/Content-Type: application/json; charset=utf-8
+Content-Length: 53
 Connection: keep-alive
  Access-Control-Allow-Origin: *
-6Access-Control-Allow-Methods: GET, POST, DELETE, PUT
-DAccess-Control-Allow-Headers: Content-Type, api_key, Authorization
- Server: Jetty(9.2.9.v20150224)
+x-dns-prefetch-control: off
+x-frame-options: SAMEORIGIN
+@strict-transport-security: max-age=15552000; includeSubDomains
+x-download-options: noopen
+!x-content-type-options: nosniff
+!x-xss-protection: 1; mode=block
+?x-moesif-transaction-id: 471522da-2f27-4420-b8eb-c37ca9cf46b3
 
 {
-    "code": 200,
-    "type": "unknown",
-    "message": "ok"
+2    "message": "Este email já está sendo usado"
 }
